@@ -1,0 +1,18 @@
+include MANIFEST.in
+include requirements.txt
+include *.json
+include *.md
+include *.py
+include *.txt
+recursive-include ekata *.css
+recursive-include ekata *.csv
+recursive-include ekata *.html
+recursive-include ekata *.ico
+recursive-include ekata *.js
+recursive-include ekata *.json
+recursive-include ekata *.md
+recursive-include ekata *.png
+recursive-include ekata *.py
+recursive-include ekata *.svg
+recursive-include ekata *.txt
+recursive-exclude ekata *.pyc
