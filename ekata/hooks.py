@@ -82,7 +82,7 @@ app_license = "MIT"
 # has_permission = {
 #	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
-
+fixtures = ["Custom Field", "Property Setter","Print Format"] 
 # DocType Class
 # ---------------
 # Override standard doctype classes
