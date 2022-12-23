@@ -82,7 +82,7 @@ app_license = "MIT"
 # has_permission = {
 #	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
-fixtures = ["Custom Field", "Property Setter","Print Format"] 
+fixtures = ["Custom Field", "Property Setter","Print Format","Sales Invoice"] 
 # DocType Class
 # ---------------
 # Override standard doctype classes
@@ -102,6 +102,11 @@ fixtures = ["Custom Field", "Property Setter","Print Format"]
 #		"on_trash": "method"
 #	}
 # }
+doc_events = {
+	"Sales Invoice" : {
+		"validate":"ekata.ekata.custom_scripts.sales_invoice.sales_invoice.validate"
+	}
+}
 
 # Scheduled Tasks
 # ---------------
