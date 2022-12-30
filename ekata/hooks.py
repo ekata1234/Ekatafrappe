@@ -32,10 +32,6 @@ app_license = "MIT"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
-doctype_js = {
-	"Sales Invoice" : "ekata/custom_scripts/sales_invoice/sales_invoice.js"
-	# "doctype" : "public/js/doctype.js"
-}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
