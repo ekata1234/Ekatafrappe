@@ -1,0 +1,26 @@
+[
+ {
+  "align": "Left",
+  "content": "<div style=\"text-align: left;\">\n<img alt=\"EKATA Header\" height=\"\" src=\"/private/files/EKATA-Header.png\" style=\"height: px;\">\n</div>",
+  "disabled": 0,
+  "docstatus": 0,
+  "doctype": "Letter Head",
+  "footer": "<div style=\"text-align: left;\">\n<img alt=\"EKATA Header\" height=\"\" src=\"/private/files/EKATA-Footer.png\" style=\"height: px;\">\n</div>",
+  "footer_align": "Left",
+  "footer_image": "/private/files/EKATA-Footer.png",
+  "footer_image_height": 0.0,
+  "footer_image_width": 0.0,
+  "footer_source": "Image",
+  "image": "/private/files/EKATA-Header.png",
+  "image_height": 0.0,
+  "image_width": 0.0,
+  "is_default": 1,
+  "letter_head_name": "EKATA Header",
+  "modified": "2022-09-05 17:03:10.307700",
+  "name": "EKATA Header",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "source": "Image"
+ }
+]

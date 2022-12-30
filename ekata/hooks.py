@@ -32,6 +32,10 @@ app_license = "MIT"
 
 # include js in doctype views
 # doctype_js = {"doctype" : "public/js/doctype.js"}
+doctype_js = {
+	"Sales Invoice" : "ekata/custom_scripts/sales_invoice/sales_invoice.js"
+	# "doctype" : "public/js/doctype.js"
+}
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
@@ -82,7 +86,7 @@ app_license = "MIT"
 # has_permission = {
 #	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
-fixtures = ["Custom Field", "Property Setter","Print Format","Sales Invoice"] 
+fixtures = ['Custom Field', 'Property Setter', 'Print Format', 'Role', 'Letter Head', 'Print Style', 'Print Settings', 'Email Template','Client Script']
 # DocType Class
 # ---------------
 # Override standard doctype classes
