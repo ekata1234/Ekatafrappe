@@ -65,14 +65,5 @@ def custom_calculate_totals(self):
 
     self.set_rounded_total()
 
-# @frappe.whitelist()
-# def validate(self,method = None):
-#     amount = 0
-#     for courier in self.courier_charges_and_others:
-#         amount = amount + courier.amount
-#     self.grand_total = self.outstanding_amount + amount
-#     self.doc = self
-#     calculate_taxes_and_totals.set_rounded_total(self.doc)
-
 def validate(self,method = None):
     calculate_taxes_and_totals.calculate_totals = custom_calculate_totals
