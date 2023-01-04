@@ -85,7 +85,21 @@ doctype_js = {
 # has_permission = {
 #	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
-fixtures = ['Custom Field', 'Property Setter', 'Print Format', 'Role', 'Letter Head', 'Print Style', 'Print Settings', 'Email Template','Client Script']
+fixtures = [
+	'Custom Field',
+	'Property Setter',
+	'Print Format',
+	'Role',
+	'Letter Head',
+	'Print Style',
+	'Print Settings',
+	'Email Template',
+	'Client Script',
+	'Workflow',
+	'Domain',
+	'Email Account',
+	'Notification'	
+]
 # DocType Class
 # ---------------
 # Override standard doctype classes
