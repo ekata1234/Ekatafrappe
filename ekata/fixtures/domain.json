@@ -1,0 +1,102 @@
+[
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Retail",
+  "modified": "2022-08-26 09:25:28.283470",
+  "name": "Retail",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Manufacturing",
+  "modified": "2022-08-26 09:25:41.574363",
+  "name": "Manufacturing",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Education",
+  "modified": "2022-08-26 09:25:52.760748",
+  "name": "Education",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Healthcare",
+  "modified": "2022-08-26 09:25:59.599613",
+  "name": "Healthcare",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Hospitality",
+  "modified": "2022-08-26 09:26:06.517790",
+  "name": "Hospitality",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Agriculture",
+  "modified": "2022-08-26 09:26:06.975815",
+  "name": "Agriculture",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Non Profit",
+  "modified": "2022-08-26 09:26:10.415123",
+  "name": "Non Profit",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Distribution",
+  "modified": "2022-09-05 16:12:52.415961",
+  "name": "Distribution",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Services",
+  "modified": "2022-09-05 16:12:52.432084",
+  "name": "Services",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "docstatus": 0,
+  "doctype": "Domain",
+  "domain": "Outlook.com",
+  "modified": "2022-12-13 14:55:09.446130",
+  "name": "Outlook.com",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ }
+]
