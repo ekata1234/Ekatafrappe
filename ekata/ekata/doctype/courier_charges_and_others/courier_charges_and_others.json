@@ -1,0 +1,79 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2023-01-02 13:10:15.651221",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "expense_account_head",
+  "amount",
+  "lft",
+  "rgt",
+  "is_group",
+  "old_parent",
+  "parent_courier_charges_and_others"
+ ],
+ "fields": [
+  {
+   "fieldname": "expense_account_head",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Expense Account Head",
+   "options": "Account"
+  },
+  {
+   "fieldname": "amount",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Amount",
+   "options": "currency"
+  },
+  {
+   "fieldname": "lft",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Left",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "rgt",
+   "fieldtype": "Int",
+   "hidden": 1,
+   "label": "Right",
+   "no_copy": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "is_group",
+   "fieldtype": "Check",
+   "label": "Is Group"
+  },
+  {
+   "fieldname": "old_parent",
+   "fieldtype": "Link",
+   "label": "Old Parent",
+   "options": "Courier charges and others"
+  },
+  {
+   "fieldname": "parent_courier_charges_and_others",
+   "fieldtype": "Link",
+   "label": "Parent Courier charges and others",
+   "options": "Courier charges and others"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2023-01-05 13:58:18.995546",
+ "modified_by": "Administrator",
+ "module": "Ekata",
+ "name": "Courier charges and others",
+ "nsm_parent_field": "parent_courier_charges_and_others",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
