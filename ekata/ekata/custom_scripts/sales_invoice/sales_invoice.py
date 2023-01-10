@@ -1,4 +1,4 @@
-# import frappe
+import frappe
 # from frappe.utils import flt
 # from erpnext.controllers.taxes_and_totals import calculate_taxes_and_totals
 
@@ -66,5 +66,18 @@
 #     self.set_rounded_total()
 
 def validate(self,method = None):
-    pass
+    if self.naming_series == "EEPL/E/.##./.FY.":
+        if not frappe.db.exists('Sales Invoice', 'EEPL/E/14/22-23'):
+            self.name = "EEPL/E/14/22-23"
+            frappe.db.sql("update `tabSeries` set current=14 where name = 'EEPL/E/'")
+
+    if self.naming_series == "EEPL/L/.##./.FY.":
+        if not frappe.db.exists('Sales Invoice', 'EEPL/L/08/22-23'):
+            self.name = "EEPL/L/08/22-23"
+            frappe.db.sql("update `tabSeries` set current=08 where name = 'EEPL/L/'")
+
+    if self.naming_series == "S/.###./.FY.":
+        if not frappe.db.exists('Sales Invoice', 'S/088/2022'):
+            self.name = "S/088/2022"
+            frappe.db.sql("update `tabSeries` set current=088 where name = 'S/'")
     # calculate_taxes_and_totals.calculate_totals = custom_calculate_totals

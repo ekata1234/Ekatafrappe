@@ -96,6 +96,7 @@ fixtures = [
 	'Email Template',
 	'Client Script',
 	'Workflow',
+	'Workflow State',
 	'Notification'	
 ]
 # DocType Class
@@ -120,7 +121,16 @@ fixtures = [
 doc_events = {
 	"Sales Invoice" : {
 		"validate":"ekata.ekata.custom_scripts.sales_invoice.sales_invoice.validate"
-	}
+	},
+	"Purchase Order" : {
+		"validate":"ekata.ekata.custom_scripts.purchase_order.purchase_order.validate"
+	},
+	"Quotation" : {
+		"validate":"ekata.ekata.custom_scripts.quotation.quotation.validate"
+	},
+	"Delivery Note" : {
+		"validate":"ekata.ekata.custom_scripts.delivery_note.delivery_note.validate"
+	},
 }
 
 # Scheduled Tasks
