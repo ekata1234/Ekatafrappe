@@ -96,8 +96,6 @@ fixtures = [
 	'Email Template',
 	'Client Script',
 	'Workflow',
-	'Domain',
-	'Email Account',
 	'Notification'	
 ]
 # DocType Class

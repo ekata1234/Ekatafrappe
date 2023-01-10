@@ -1077,7 +1077,7 @@
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
   "field_name": "naming_series",
-  "modified": "2022-11-16 19:39:05.036587",
+  "modified": "2023-01-10 15:00:47.215717",
   "name": "Sales Invoice-naming_series-options",
   "parent": null,
   "parentfield": null,
@@ -2250,7 +2250,7 @@
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
   "field_name": "naming_series",
-  "modified": "2022-11-16 19:39:05.061179",
+  "modified": "2023-01-10 15:00:47.330388",
   "name": "Sales Invoice-naming_series-default",
   "parent": null,
   "parentfield": null,
@@ -2276,5 +2276,22 @@
   "property_type": "Data",
   "row_name": null,
   "value": ""
+ },
+ {
+  "default_value": null,
+  "doc_type": "Supplier",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "supplier_type",
+  "modified": "2023-01-10 14:54:14.110419",
+  "name": "Supplier-supplier_type-options",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "property": "options",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "Company\nIndividual\nLLP\nFirm"
  }
 ]
