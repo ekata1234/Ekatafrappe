@@ -80,4 +80,19 @@ def validate(self,method = None):
         if not frappe.db.exists('Sales Invoice', 'S/088/2022'):
             self.name = "S/088/2022"
             frappe.db.sql("update `tabSeries` set current=088 where name = 'S/'")
+
+    if self.naming_series == "EEPL/R/.###./.FY.":
+        if not frappe.db.exists('Sales Invoice', 'EEPL/R/001/22-23'):
+            self.name = "EEPL/R/001/22-23"
+            frappe.db.sql("update `tabSeries` set current=001 where name = 'EEPL/R/'")
+
+    if self.naming_series == "EEPL/ES/.##./.FY.":
+        if not frappe.db.exists('Sales Invoice', 'EEPL/ES/01/22-23'):
+            self.name = "EEPL/ES/01/22-23"
+            frappe.db.sql("update `tabSeries` set current=01 where name = 'EEPL/ES/'")
+
+    if self.naming_series == "EEPL/CN/.##./.FY.":
+        if not frappe.db.exists('Sales Invoice', 'EEPL/CN/01/22-23'):
+            self.name = "EEPL/CN/01/22-23"
+            frappe.db.sql("update `tabSeries` set current=01 where name = 'EEPL/CN/'")
     # calculate_taxes_and_totals.calculate_totals = custom_calculate_totals

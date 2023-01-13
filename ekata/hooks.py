@@ -131,6 +131,9 @@ doc_events = {
 	"Delivery Note" : {
 		"validate":"ekata.ekata.custom_scripts.delivery_note.delivery_note.validate"
 	},
+	"Sales Order" : {
+		"validate":"ekata.ekata.custom_scripts.sales_order.sales_order.validate"
+	},
 }
 
 # Scheduled Tasks
