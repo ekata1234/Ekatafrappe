@@ -97,7 +97,8 @@ fixtures = [
 	'Client Script',
 	'Workflow',
 	'Workflow State',
-	'Notification'	
+	'Notification',
+	'Warehouse'
 ]
 # DocType Class
 # ---------------
