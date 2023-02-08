@@ -34,7 +34,8 @@ app_license = "MIT"
 # doctype_js = {"doctype" : "public/js/doctype.js"}
 doctype_js = {
 	"Expense Claim" : "ekata/custom_scripts/expense_claim.js",
-	"Sales Invoice" : "ekata/custom_scripts/sales_invoice/sales_invoice.js"
+	"Sales Invoice" : "ekata/custom_scripts/sales_invoice/sales_invoice.js",
+	"Sales Order" : "ekata/custom_scripts/sales_order/sales_order.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
