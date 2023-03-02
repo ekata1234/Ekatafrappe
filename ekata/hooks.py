@@ -38,6 +38,7 @@ doctype_js = {
 	"Sales Order" : "ekata/custom_scripts/sales_order/sales_order.js",
 	"Delivery Note" : "ekata/custom_scripts/delivery_note/delivery_note.js",
 	"Employee" : "ekata/custom_scripts/employee/employee.js",
+	"Material Request" : "ekata/custom_scripts/material_request/material_request.js",
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
