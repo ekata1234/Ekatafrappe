@@ -140,6 +140,9 @@ doc_events = {
 	"Sales Order" : {
 		"validate":"ekata.ekata.custom_scripts.sales_order.sales_order.validate"
 	},
+	"Supplier Quotation" : {
+		"validate":"ekata.ekata.custom_scripts.supplier_quotation.supplier_quotation.validate"
+	},
 }
 
 # Scheduled Tasks

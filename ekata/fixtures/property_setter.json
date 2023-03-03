@@ -2361,5 +2361,22 @@
   "property_type": "Text",
   "row_name": null,
   "value": ""
- }
+ },
+ {
+  "default_value": null,
+  "doc_type": "Expense Claim",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "clearance_date",
+  "modified": "2023-03-03 18:15:16.571575",
+  "name": "Expense Claim-clearance_date-default",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "property": "default",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "Today"
+   }
 ]
