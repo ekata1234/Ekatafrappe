@@ -1,0 +1,127 @@
+[
+ {
+  "designation": "IT ANALYST",
+  "docstatus": 0,
+  "doctype": "Interview Round",
+  "expected_average_rating": 4,
+  "expected_skill_set": [
+   {
+    "description": "* English - READ AND WRITE\n",
+    "parent": "LEVEL 1 - HR",
+    "parentfield": "expected_skill_set",
+    "parenttype": "Interview Round",
+    "skill": "Language"
+   },
+   {
+    "description": "IT Analyst Responsibilities:\n\n\nAnalyzing current IT systems, architectures, and processes.\nIdentifying risks, opportunities, faults, and areas for development within the company's IT framework.\nDesigning IT solutions and solving issues effectively.\nExecuting well-thought-out solutions and plans to improve company efficiencies.\nMaintaining robust systems processes and ensuring compliance with relevant regulatory bodies.\nDeveloping new IT methods and solutions for the business.\nReporting issues, advances made, and other important information to stakeholders.\nAdvising management on weak points, avenues for improvement, and risks in the company's IT infrastructure.\nStrategizing with other key stakeholders on how to best align IT systems with company objectives.\n\nIT Analyst Requirements:\n\n\nA bachelor's degree in computer science, business information systems, information technology, or a related field.\nCertification and proficiency in a coding language (.NET, Visual Basic, C++, or SQL).\nAt least 2 years of experience in an IT-related position.\nKnowledge of databases, data processes, program architectures, and data security.\nSkills in designing, reporting, and documenting implementations and solutions.\nKnowledge of industry best practices and experience with both hardware and software systems.\nUp-to-date insight into the latest developments in the information technology sphere.\nAbility to work independently and knowledge of agile team structures.\nExcellent report writing and communication skills.\nSuperb interpersonal and presentation skills.\n",
+    "parent": "LEVEL 1 - HR",
+    "parentfield": "expected_skill_set",
+    "parenttype": "Interview Round",
+    "skill": "IT SKILLS"
+   },
+   {
+    "description": "",
+    "parent": "LEVEL 1 - HR",
+    "parentfield": "expected_skill_set",
+    "parenttype": "Interview Round",
+    "skill": "Work history"
+   }
+  ],
+  "interview_type": "LEVEL 1 - HR ROUND",
+  "interviewers": [
+   {
+    "parent": "LEVEL 1 - HR",
+    "parentfield": "interviewers",
+    "parenttype": "Interview Round",
+    "user": "hr@ekata.co.in"
+   }
+  ],
+  "modified": "2023-03-21 15:59:27.368403",
+  "name": "LEVEL 1 - HR",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "round_name": "LEVEL 1 - HR"
+ },
+ {
+  "designation": "IT ANALYST",
+  "docstatus": 0,
+  "doctype": "Interview Round",
+  "expected_average_rating": 4,
+  "expected_skill_set": [
+   {
+    "description": "* English - READ AND WRITE\n",
+    "parent": "LEVEL 2 - TECHNICAL",
+    "parentfield": "expected_skill_set",
+    "parenttype": "Interview Round",
+    "skill": "Language"
+   },
+   {
+    "description": "IT Analyst Responsibilities:\n\n\nAnalyzing current IT systems, architectures, and processes.\nIdentifying risks, opportunities, faults, and areas for development within the company's IT framework.\nDesigning IT solutions and solving issues effectively.\nExecuting well-thought-out solutions and plans to improve company efficiencies.\nMaintaining robust systems processes and ensuring compliance with relevant regulatory bodies.\nDeveloping new IT methods and solutions for the business.\nReporting issues, advances made, and other important information to stakeholders.\nAdvising management on weak points, avenues for improvement, and risks in the company's IT infrastructure.\nStrategizing with other key stakeholders on how to best align IT systems with company objectives.\n\nIT Analyst Requirements:\n\n\nA bachelor's degree in computer science, business information systems, information technology, or a related field.\nCertification and proficiency in a coding language (.NET, Visual Basic, C++, or SQL).\nAt least 2 years of experience in an IT-related position.\nKnowledge of databases, data processes, program architectures, and data security.\nSkills in designing, reporting, and documenting implementations and solutions.\nKnowledge of industry best practices and experience with both hardware and software systems.\nUp-to-date insight into the latest developments in the information technology sphere.\nAbility to work independently and knowledge of agile team structures.\nExcellent report writing and communication skills.\nSuperb interpersonal and presentation skills.\n",
+    "parent": "LEVEL 2 - TECHNICAL",
+    "parentfield": "expected_skill_set",
+    "parenttype": "Interview Round",
+    "skill": "IT SKILLS"
+   },
+   {
+    "description": "",
+    "parent": "LEVEL 2 - TECHNICAL",
+    "parentfield": "expected_skill_set",
+    "parenttype": "Interview Round",
+    "skill": "Work history"
+   }
+  ],
+  "interview_type": "LEVEL 2 - TECHNICAL ROUND",
+  "interviewers": [
+   {
+    "parent": "LEVEL 2 - TECHNICAL",
+    "parentfield": "interviewers",
+    "parenttype": "Interview Round",
+    "user": "fahad@ekata.co.in"
+   }
+  ],
+  "modified": "2023-03-21 16:00:05.255233",
+  "name": "LEVEL 2 - TECHNICAL",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "round_name": "LEVEL 2 - TECHNICAL"
+ },
+ {
+  "designation": "IT ANALYST",
+  "docstatus": 0,
+  "doctype": "Interview Round",
+  "expected_average_rating": 4,
+  "expected_skill_set": [
+   {
+    "description": "IT Analyst Responsibilities:\n\n\nAnalyzing current IT systems, architectures, and processes.\nIdentifying risks, opportunities, faults, and areas for development within the company's IT framework.\nDesigning IT solutions and solving issues effectively.\nExecuting well-thought-out solutions and plans to improve company efficiencies.\nMaintaining robust systems processes and ensuring compliance with relevant regulatory bodies.\nDeveloping new IT methods and solutions for the business.\nReporting issues, advances made, and other important information to stakeholders.\nAdvising management on weak points, avenues for improvement, and risks in the company's IT infrastructure.\nStrategizing with other key stakeholders on how to best align IT systems with company objectives.\n\nIT Analyst Requirements:\n\n\nA bachelor's degree in computer science, business information systems, information technology, or a related field.\nCertification and proficiency in a coding language (.NET, Visual Basic, C++, or SQL).\nAt least 2 years of experience in an IT-related position.\nKnowledge of databases, data processes, program architectures, and data security.\nSkills in designing, reporting, and documenting implementations and solutions.\nKnowledge of industry best practices and experience with both hardware and software systems.\nUp-to-date insight into the latest developments in the information technology sphere.\nAbility to work independently and knowledge of agile team structures.\nExcellent report writing and communication skills.\nSuperb interpersonal and presentation skills.\n",
+    "parent": "LEVEL 3 - HR CONFRIMATION",
+    "parentfield": "expected_skill_set",
+    "parenttype": "Interview Round",
+    "skill": "IT SKILLS"
+   },
+   {
+    "description": "",
+    "parent": "LEVEL 3 - HR CONFRIMATION",
+    "parentfield": "expected_skill_set",
+    "parenttype": "Interview Round",
+    "skill": "Work history"
+   }
+  ],
+  "interview_type": "LEVEL 3 - CONFIRMATION ROUND",
+  "interviewers": [
+   {
+    "parent": "LEVEL 3 - HR CONFRIMATION",
+    "parentfield": "interviewers",
+    "parenttype": "Interview Round",
+    "user": "hr@ekata.co.in"
+   }
+  ],
+  "modified": "2023-03-21 16:00:31.888937",
+  "name": "LEVEL 3 - HR CONFRIMATION",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "round_name": "LEVEL 3 - HR CONFRIMATION"
+ }
+]
