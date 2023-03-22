@@ -39,6 +39,7 @@ doctype_js = {
 	"Delivery Note" : "ekata/custom_scripts/delivery_note/delivery_note.js",
 	"Employee" : "ekata/custom_scripts/employee/employee.js",
 	"Material Request" : "ekata/custom_scripts/material_request/material_request.js",
+	"Job Offer" : "ekata/custom_scripts/job_offer/job_offer.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -103,7 +104,13 @@ fixtures = [
 	'Workflow',
 	'Workflow State',
 	'Notification',
-	'Warehouse'
+	'Warehouse',
+	'Leave Type',
+	'Holiday List',
+	'Salary Structure',
+	'Interview Round',
+	'Interview Type',
+	'Designation'
 ]
 # DocType Class
 # ---------------

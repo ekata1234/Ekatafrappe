@@ -1,0 +1,32 @@
+[
+ {
+  "description": "* GREETINGs from the company and about company\n* Introduction\n* qualification\n* current and Expected CTC\n* Relocation \n* Experience Level and History of jobs\n* closure with greetings",
+  "docstatus": 0,
+  "doctype": "Interview Type",
+  "modified": "2023-03-21 15:49:06.476273",
+  "name": "LEVEL 1 - HR ROUND",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "description": "1. Understand the Problem\n2. Find a Brute Force Solution\n3. Optimize Your Code\n4. Test Your Solution\n5. Certification  and verification",
+  "docstatus": 0,
+  "doctype": "Interview Type",
+  "modified": "2023-03-21 15:49:42.365904",
+  "name": "LEVEL 2 - TECHNICAL ROUND",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ },
+ {
+  "description": "* Payroll and CTC by the company\n* Job documents list + proof required.\n* Job details \n* Training period and programs \n* Office working details",
+  "docstatus": 0,
+  "doctype": "Interview Type",
+  "modified": "2023-03-21 15:50:21.417270",
+  "name": "LEVEL 3 - CONFIRMATION ROUND",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null
+ }
+]

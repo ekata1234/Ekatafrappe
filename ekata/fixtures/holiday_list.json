@@ -1,0 +1,115 @@
+[
+ {
+  "color": null,
+  "docstatus": 0,
+  "doctype": "Holiday List",
+  "from_date": "2023-01-01",
+  "holiday_list_name": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+  "holidays": [
+   {
+    "description": "Republic Day",
+    "holiday_date": "2023-01-26",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Ugadi",
+    "holiday_date": "2023-03-22",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Good Friday",
+    "holiday_date": "2023-04-07",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "May Day",
+    "holiday_date": "2023-05-01",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Bakri Eid",
+    "holiday_date": "2023-06-29",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Independence Day",
+    "holiday_date": "2023-08-15",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Ganesh Chaturti",
+    "holiday_date": "2023-09-18",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Gandhi Jayanti",
+    "holiday_date": "2023-10-02",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Ayudha Pooja",
+    "holiday_date": "2023-10-23",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Karnataka Rajyotsava",
+    "holiday_date": "2023-11-01",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Deepavali",
+    "holiday_date": "2023-11-14",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   },
+   {
+    "description": "Christmas",
+    "holiday_date": "2023-12-25",
+    "parent": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+    "parentfield": "holidays",
+    "parenttype": "Holiday List",
+    "weekly_off": 0
+   }
+  ],
+  "modified": "2023-03-21 15:13:51.024529",
+  "name": "LIST OF NATIONAL & FESTIVAL HOLIDAYS FOR THE YEAR -2023",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "to_date": "2023-12-31",
+  "total_holidays": 12,
+  "weekly_off": "Sunday"
+ }
+]
