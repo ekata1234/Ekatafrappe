@@ -39,7 +39,9 @@ doctype_js = {
 	"Delivery Note" : "ekata/custom_scripts/delivery_note/delivery_note.js",
 	"Employee" : "ekata/custom_scripts/employee/employee.js",
 	"Material Request" : "ekata/custom_scripts/material_request/material_request.js",
-	"Job Offer" : "ekata/custom_scripts/job_offer/job_offer.js"
+	"Job Offer" : "ekata/custom_scripts/job_offer/job_offer.js",
+	"Stock Entry":"ekata/custom_scripts/stock_entry/stock_entry.js"
+	# "Naming Series":"ekata/custom_scripts/naming_series/naming_series.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -119,7 +121,10 @@ fixtures = [
 # override_doctype_class = {
 #	"ToDo": "custom_app.overrides.CustomToDo"
 # }
-
+# override_doctype_class = {
+# 	"Naming Series": "ekata.ekata.custom_scripts.naming_series.naming_series.CustomNamingSeries"
+# }
+# ekata.custom_scripts.naming_series.naming_series.get_current
 # Document Events
 # ---------------
 # Hook on document methods and events
@@ -149,6 +154,9 @@ doc_events = {
 	},
 	"Supplier Quotation" : {
 		"validate":"ekata.ekata.custom_scripts.supplier_quotation.supplier_quotation.validate"
+	},
+	"Stock Entry" : {
+		"on_submit":"ekata.ekata.custom_scripts.stock_entry.stock_entry.on_submit"
 	},
 }
 
