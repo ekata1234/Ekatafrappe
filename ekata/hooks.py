@@ -40,7 +40,8 @@ doctype_js = {
 	"Employee" : "ekata/custom_scripts/employee/employee.js",
 	"Material Request" : "ekata/custom_scripts/material_request/material_request.js",
 	"Job Offer" : "ekata/custom_scripts/job_offer/job_offer.js",
-	"Stock Entry":"ekata/custom_scripts/stock_entry/stock_entry.js"
+	"Stock Entry":"ekata/custom_scripts/stock_entry/stock_entry.js",
+	"Shipment":"ekata/custom_scripts/shipment/shipment.js"
 	# "Naming Series":"ekata/custom_scripts/naming_series/naming_series.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
@@ -93,27 +94,30 @@ doctype_js = {
 # has_permission = {
 #	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
-fixtures = [
-	'Custom Field',
-	'Property Setter',
-	'Print Format',
-	'Role',
-	'Letter Head',
-	'Print Style',
-	'Print Settings',
-	'Email Template',
-	'Client Script',
-	'Workflow',
-	'Workflow State',
-	'Notification',
-	'Warehouse',
-	'Leave Type',
-	'Holiday List',
-	'Salary Structure',
-	'Interview Round',
-	'Interview Type',
-	'Designation'
-]
+# fixtures = [
+# 	'Custom Field',
+# 	'Property Setter',
+# 	'Print Format',
+# 	'Role',
+# 	'Letter Head',
+# 	'Print Style',
+# 	'Print Settings',
+# 	'Email Template',
+# 	'Client Script',
+# 	'Workflow',
+# 	'Workflow State',
+# 	'Notification',
+# 	'Warehouse',
+# 	'Leave Type',
+# 	'Holiday List',
+# 	'Salary Structure',
+# 	'Interview Round',
+# 	'Interview Type',
+# 	'Designation'
+# ]
+
+
+fixtures = [{"dt":'Custom Field',"filters":[["creation", "between", ("2023-03-29" , "2023-03-31")]]}]
 # DocType Class
 # ---------------
 # Override standard doctype classes
@@ -158,6 +162,9 @@ doc_events = {
 	"Stock Entry" : {
 		"on_submit":"ekata.ekata.custom_scripts.stock_entry.stock_entry.on_submit"
 	},
+	"Material Request" : {
+		"validate":"ekata.ekata.custom_scripts.material_request.material_request.validate"
+	},
 }
 
 # Scheduled Tasks
@@ -193,6 +200,10 @@ doc_events = {
 #	"frappe.desk.doctype.event.event.get_events": "ekata.event.get_events"
 # }
 #
+override_whitelisted_methods = {
+	"erpnext.stock.doctype.material_request.material_request.make_request_for_quotation":"ekata.ekata.custom_scripts.material_request.material_request.make_request_for_quotation"
+}
+
 # each overriding function accepts a `data` argument;
 # generated from the base implementation of the doctype dashboard,
 # along with any modifications made in other Frappe apps
