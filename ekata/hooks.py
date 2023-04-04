@@ -41,7 +41,8 @@ doctype_js = {
 	"Material Request" : "ekata/custom_scripts/material_request/material_request.js",
 	"Job Offer" : "ekata/custom_scripts/job_offer/job_offer.js",
 	"Stock Entry":"ekata/custom_scripts/stock_entry/stock_entry.js",
-	"Shipment":"ekata/custom_scripts/shipment/shipment.js"
+	"Shipment":"ekata/custom_scripts/shipment/shipment.js",
+	"Purchase Order":"ekata/custom_scripts/purchase_order/purchase_order.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -96,7 +97,7 @@ doctype_js = {
 fixtures = [
 	# 'Custom Field',
 	# 'Property Setter',
-	'Print Format',
+	# 'Print Format',
 	# 'Role',
 	# 'Letter Head',
 	# 'Print Style',
@@ -116,8 +117,7 @@ fixtures = [
 ]
 
 
-# fixtures = [{"dt":'Custom Field',"filters":[["creation", "between", ("2023-03-29" , "2023-03-31")]]}]
-# fixtures = [{"dt":'Property Setter',"filters":[["name", "in", ("Material Request-material_request_type-options","Shipment-incoterm-options")]]}]
+fixtures = [{"dt":'Custom Field',"filters":[["name", "in", ("Purchase Order-section_break_62","Purchase Order-subject", "Purchase Order-column_break_64","Purchase Order-other_content","Purchase Order-authorization","Purchase Order-attachment","Purchase Order-preview_html")]]}]
 # DocType Class
 # ---------------
 # Override standard doctype classes
