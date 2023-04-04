@@ -66,33 +66,34 @@ import frappe
 #     self.set_rounded_total()
 
 def validate(self,method = None):
-    if self.naming_series == "EEPL/E/.##./.FY.":
-        if not frappe.db.exists('Sales Invoice', 'EEPL/E/14/22-23'):
-            self.name = "EEPL/E/14/22-23"
-            frappe.db.sql("update `tabSeries` set current=14 where name = 'EEPL/E/'")
+    pass
+    # if self.naming_series == "EEPL/E/.##./.FY.":
+    #     if not frappe.db.exists('Sales Invoice', 'EEPL/E/14/22-23'):
+    #         self.name = "EEPL/E/14/22-23"
+    #         frappe.db.sql("update `tabSeries` set current=14 where name = 'EEPL/E/'")
 
-    if self.naming_series == "EEPL/L/.##./.FY.":
-        if not frappe.db.exists('Sales Invoice', 'EEPL/L/08/22-23'):
-            self.name = "EEPL/L/08/22-23"
-            frappe.db.sql("update `tabSeries` set current=08 where name = 'EEPL/L/'")
+    # if self.naming_series == "EEPL/L/.##./.FY.":
+    #     if not frappe.db.exists('Sales Invoice', 'EEPL/L/08/22-23'):
+    #         self.name = "EEPL/L/08/22-23"
+    #         frappe.db.sql("update `tabSeries` set current=08 where name = 'EEPL/L/'")
 
-    if self.naming_series == "S/.###./.FY.":
-        if not frappe.db.exists('Sales Invoice', 'S/088/2022'):
-            self.name = "S/088/2022"
-            frappe.db.sql("update `tabSeries` set current=088 where name = 'S/'")
+    # if self.naming_series == "S/.###./.FY.":
+    #     if not frappe.db.exists('Sales Invoice', 'S/088/2022'):
+    #         self.name = "S/088/2022"
+    #         frappe.db.sql("update `tabSeries` set current=088 where name = 'S/'")
 
-    if self.naming_series == "EEPL/R/.###./.FY.":
-        if not frappe.db.exists('Sales Invoice', 'EEPL/R/001/22-23'):
-            self.name = "EEPL/R/001/22-23"
-            frappe.db.sql("update `tabSeries` set current=001 where name = 'EEPL/R/'")
+    # if self.naming_series == "EEPL/R/.###./.FY.":
+    #     if not frappe.db.exists('Sales Invoice', 'EEPL/R/001/22-23'):
+    #         self.name = "EEPL/R/001/22-23"
+    #         frappe.db.sql("update `tabSeries` set current=001 where name = 'EEPL/R/'")
 
-    if self.naming_series == "EEPL/ES/.##./.FY.":
-        if not frappe.db.exists('Sales Invoice', 'EEPL/ES/01/22-23'):
-            self.name = "EEPL/ES/01/22-23"
-            frappe.db.sql("update `tabSeries` set current=01 where name = 'EEPL/ES/'")
+    # if self.naming_series == "EEPL/ES/.##./.FY.":
+    #     if not frappe.db.exists('Sales Invoice', 'EEPL/ES/01/22-23'):
+    #         self.name = "EEPL/ES/01/22-23"
+    #         frappe.db.sql("update `tabSeries` set current=01 where name = 'EEPL/ES/'")
 
-    if self.naming_series == "EEPL/CN/.##./.FY.":
-        if not frappe.db.exists('Sales Invoice', 'EEPL/CN/01/22-23'):
-            self.name = "EEPL/CN/01/22-23"
-            frappe.db.sql("update `tabSeries` set current=01 where name = 'EEPL/CN/'")
+    # if self.naming_series == "EEPL/CN/.##./.FY.":
+    #     if not frappe.db.exists('Sales Invoice', 'EEPL/CN/01/22-23'):
+    #         self.name = "EEPL/CN/01/22-23"
+    #         frappe.db.sql("update `tabSeries` set current=01 where name = 'EEPL/CN/'")
     # calculate_taxes_and_totals.calculate_totals = custom_calculate_totals

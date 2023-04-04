@@ -42,7 +42,6 @@ doctype_js = {
 	"Job Offer" : "ekata/custom_scripts/job_offer/job_offer.js",
 	"Stock Entry":"ekata/custom_scripts/stock_entry/stock_entry.js",
 	"Shipment":"ekata/custom_scripts/shipment/shipment.js"
-	# "Naming Series":"ekata/custom_scripts/naming_series/naming_series.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
@@ -94,30 +93,31 @@ doctype_js = {
 # has_permission = {
 #	"Event": "frappe.desk.doctype.event.event.has_permission",
 # }
-# fixtures = [
-# 	'Custom Field',
-# 	'Property Setter',
-# 	'Print Format',
-# 	'Role',
-# 	'Letter Head',
-# 	'Print Style',
-# 	'Print Settings',
-# 	'Email Template',
-# 	'Client Script',
-# 	'Workflow',
-# 	'Workflow State',
-# 	'Notification',
-# 	'Warehouse',
-# 	'Leave Type',
-# 	'Holiday List',
-# 	'Salary Structure',
-# 	'Interview Round',
-# 	'Interview Type',
-# 	'Designation'
-# ]
+fixtures = [
+	# 'Custom Field',
+	# 'Property Setter',
+	'Print Format',
+	# 'Role',
+	# 'Letter Head',
+	# 'Print Style',
+	# 'Print Settings',
+	# 'Email Template',
+	# 'Client Script',
+	# 'Workflow',
+	# 'Workflow State',
+	# 'Notification',
+	# 'Warehouse',
+	# 'Leave Type',
+	# 'Holiday List',
+	# 'Salary Structure',
+	# 'Interview Round',
+	# 'Interview Type',
+	# 'Designation'
+]
 
 
-fixtures = [{"dt":'Custom Field',"filters":[["creation", "between", ("2023-03-29" , "2023-03-31")]]}]
+# fixtures = [{"dt":'Custom Field',"filters":[["creation", "between", ("2023-03-29" , "2023-03-31")]]}]
+# fixtures = [{"dt":'Property Setter',"filters":[["name", "in", ("Material Request-material_request_type-options","Shipment-incoterm-options")]]}]
 # DocType Class
 # ---------------
 # Override standard doctype classes
@@ -125,9 +125,9 @@ fixtures = [{"dt":'Custom Field',"filters":[["creation", "between", ("2023-03-29
 # override_doctype_class = {
 #	"ToDo": "custom_app.overrides.CustomToDo"
 # }
-# override_doctype_class = {
-# 	"Naming Series": "ekata.ekata.custom_scripts.naming_series.naming_series.CustomNamingSeries"
-# }
+override_doctype_class = {
+	"Naming Series": "ekata.ekata.custom_scripts.naming_series.naming_series.CustomNamingSeries"
+}
 # ekata.custom_scripts.naming_series.naming_series.get_current
 # Document Events
 # ---------------
