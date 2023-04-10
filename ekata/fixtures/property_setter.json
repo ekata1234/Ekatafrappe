@@ -1,36 +1,36 @@
 [
  {
   "default_value": null,
-  "doc_type": "Shipment",
+  "doc_type": "Leave Application",
   "docstatus": 0,
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
-  "field_name": "incoterm",
-  "modified": "2023-04-04 10:27:22.555890",
-  "name": "Shipment-incoterm-options",
+  "field_name": "status",
+  "modified": "2023-04-10 19:30:47.419435",
+  "name": "Leave Application-status-options",
   "parent": null,
   "parentfield": null,
   "parenttype": null,
   "property": "options",
   "property_type": "Text",
   "row_name": null,
-  "value": "EXW (Ex Works)\nFCA (Free Carrier)\nCPT (Carriage Paid To)\nCIP (Carriage and Insurance Paid to)\nDPU (Delivered At Place Unloaded)\nDAP (Delivered At Place)\nDDP (Delivered Duty Paid)\nFOB\nCIF\nEX-FACTORY"
+  "value": "Open\nApproved\nRejected"
  },
  {
   "default_value": null,
-  "doc_type": "Material Request",
+  "doc_type": "Leave Application",
   "docstatus": 0,
   "doctype": "Property Setter",
   "doctype_or_field": "DocField",
-  "field_name": "material_request_type",
-  "modified": "2023-04-04 10:32:07.873197",
-  "name": "Material Request-material_request_type-options",
+  "field_name": "status",
+  "modified": "2023-04-10 19:31:19.854789",
+  "name": "Leave Application-status-depends_on",
   "parent": null,
   "parentfield": null,
   "parenttype": null,
-  "property": "options",
-  "property_type": "Text",
+  "property": "depends_on",
+  "property_type": "Data",
   "row_name": null,
-  "value": "Purchase\nMaterial Transfer\nMaterial Issue\nManufacture\nCustomer Provided\nRAW Coffee\nCoffee Transfer\nCoffee Issue\nCoffee Manufacturing"
+  "value": "eval:doc.leave_approver == frappe.session.user"
  }
 ]
