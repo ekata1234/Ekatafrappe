@@ -8,7 +8,10 @@
  "field_order": [
   "document",
   "attach",
-  "checkbox"
+  "checkbox",
+  "title",
+  "type",
+  "required_documents"
  ],
  "fields": [
   {
@@ -26,12 +29,29 @@
    "fieldname": "checkbox",
    "fieldtype": "Check",
    "label": "Checkbox"
+  },
+  {
+   "fieldname": "title",
+   "fieldtype": "Data",
+   "label": "Title"
+  },
+  {
+   "fieldname": "type",
+   "fieldtype": "Select",
+   "label": "Type",
+   "options": "\nDomestic\nImport"
+  },
+  {
+   "fieldname": "required_documents",
+   "fieldtype": "Link",
+   "label": "Required Documents",
+   "options": "Documents Required for Shipment"
   }
  ],
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2023-03-31 16:44:15.611226",
+ "modified": "2023-05-24 15:32:10.494226",
  "modified_by": "Administrator",
  "module": "Ekata",
  "name": "Shipment Document",
