@@ -29,20 +29,17 @@ def send_notifications_mail():
     
 
     # Iterate through the events and send email notifications
-    for holiday in holiday_list:
+   for holiday in holiday_list:
         print("\n holiday dt--",holiday)
-        # for emp in attendee_email:
-        emp = "priyanka.d@indictranstech.com"
-        for mail in emp_list:
-            print("\n emp--",emp)
-            subject = f"Reminder:  '{holiday.description}' is tomorrow"
-            
-            recipients = emp            
-            message = f"Dear {mail.employee_name}! This email is to remind you about the upcoming holidays.\n\n Below is the list of upcoming holidays for you:\n'{holiday.description}'"
-            
-            # Send the email using the frappe library
-            print(f"\n\n #####{subject}\n{recipients}\n{message}\n")
-            frappe.sendmail(recipients=recipients, subject=subject, message=message)
-
-
+        for emp in attendee_email:
+            for mail in emp_list:
+                print("\n emp--",emp)
+                subject = f"Reminder:  '{holiday.description}' is tomorrow"
+                
+                recipients = emp            
+                message = f"Dear {mail.employee_name}! This email is to remind you about the upcoming holidays.\n\n Below is the list of upcoming holidays for you:\n'{holiday.description}'"
+                
+                # Send the email using the frappe library
+                print(f"\n\n #####{subject}\n{recipients}\n{message}\n")
+                frappe.sendmail(recipients=recipients, subject=subject, message=message)
 
