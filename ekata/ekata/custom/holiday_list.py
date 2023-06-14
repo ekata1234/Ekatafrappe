@@ -25,7 +25,6 @@ def send_notifications_mail():
                     message = f"""Dear {emp['employee_name']}! This email is to remind you about the upcoming holidays.
                     \n\n Below is the list of upcoming holidays for you:\n\n\n'{holiday['description']}'"""
                             
-                    # Send the email using the frappe library
                     frappe.sendmail(recipients=recipients, subject=subject, message=message)
 
  
