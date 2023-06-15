@@ -1,4 +1,4 @@
-frappe.ui.form.on('User', {
+// frappe.ui.form.on('User', {
 // 	validate:function(frm) {
 // 		console.log("in user------------------")
 // 		cur_frm.doc.roles.forEach(function(h){
