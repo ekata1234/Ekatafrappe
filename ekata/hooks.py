@@ -172,7 +172,7 @@ doc_events = {
 
 scheduler_events = {
 "cron": {
-	"* * * * *": [
+	"0 9 * * *": [
 			"ekata.ekata.custom.holiday_list.send_notifications_mail",
 		],
 		},
