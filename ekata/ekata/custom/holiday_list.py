@@ -1,3 +1,18 @@
+# import frappe
+# from datetime import datetime, timedelta
+# from frappe.model.document import Document
+
+
+# @frappe.whitelist()
+# def send_notifications_mail():
+#     subject = f"Reminder:  test mail"
+#     recipients = "priyanka.d@indictranstech.com"
+#     message = "Dear Priyanka! This is test email "
+#     print("\n\n subject--",subject,"\n message--",message,"\n\n recipients--",recipients)
+#     frappe.sendmail(recipients=recipients, subject=subject, message=message)
+
+
+
 import frappe
 from datetime import datetime, timedelta
 from frappe.model.document import Document
@@ -5,6 +20,7 @@ from frappe.model.document import Document
 
 @frappe.whitelist()
 def send_notifications_mail():
+    # frappe.sendmail("priyanka.d@indictranstech.com","test_mail","HELLO")
     current_date = datetime.now().date()
     target_date = current_date + timedelta(days=1)
     
@@ -20,7 +36,7 @@ def send_notifications_mail():
             print("\n\nemp_role --",emp_role)
             print("\n\n in Bank Holiday User--")
             for holiday in holiday_dt:
-                if holiday[holiday_date] == target_date:
+                if holiday.holiday_date == target_date:
                     subject = f"Reminder:  '{holiday['description']}' is tomorrow"
                     recipients = emp['prefered_email']
 

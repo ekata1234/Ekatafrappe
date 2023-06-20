@@ -171,12 +171,18 @@ doc_events = {
 # ---------------
 
 scheduler_events = {
-	"all": [
-#		"ekata.tasks.all"
-		"ekata.custom.holiday_list.send_notifications_mail"
+"cron": {
+	"* * * * *": [
+			"ekata.ekata.custom.holiday_list.send_notifications_mail",
+		],
+		},
+# 	"all": [
+# #		"ekata.tasks.all"
+# 		# "ekata.ekata.custom.holiday_list.send_notifications_mail"
+# 		# "ekata.ekata.custom.holiday_list.getData"
 
-	],
-	# "daily": [
+# 	],
+# 	# "daily": [
 	# 	#"ekata.tasks.daily"
 	# 	"ekata.custom.holiday_list.send_notifications_mail"
 	# 	],
