@@ -67,6 +67,7 @@ def get_conditions(filters):
     return conditions
 
 def get_data(filters,conditions):
+
     data = frappe.db.sql(f"""SELECT gl.name as gl_entry,
             gl.posting_date,
             gl.voucher_type,
@@ -77,8 +78,7 @@ def get_data(filters,conditions):
             
             WHERE  voucher_type not in ('Sales Invoice','Payment Entry','Stock Reconciliation','Stock Entry') 
             AND  1=1 {conditions}       
-            ORDER BY posting_date
-             """,as_dict=1,debug=1)
+
 
     return data
 
