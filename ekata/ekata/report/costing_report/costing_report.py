@@ -25,15 +25,16 @@ def get_conditions(filters):
     return conditions
 
 def get_data(filters,conditions):
-    data = frappe.db.sql(f"""SELECT name as gl_entry,
-            posting_date,
-            voucher_type,
-            voucher_no, 
-            debit,credit,
-            account_currency,
-            remarks, against,
-            is_opening,creation 
-            FROM `tabGL Entry` gl  
+    data = frappe.db.sql(f"""SELECT 
+                gl.voucher_no,gl.voucher_type,gl.posting_date,gl.debit,
+                gl.credit,jla.project_description            
+            FROM 
+                `tabGL Entry` gl
+            JOIN
+                `tabJournal Entry Account` jla  
+            ON  
+                gl.voucher_no = jla.parent
+
             WHERE voucher_type not in ('Sales Invoice','Payment Entry','Stock Reconciliation','Stock Entry') 
             AND  1=1 {conditions}       
             ORDER BY posting_date
