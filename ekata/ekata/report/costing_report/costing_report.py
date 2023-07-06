@@ -1,19 +1,61 @@
-import copy
-from collections import OrderedDict
 
 import frappe
-from frappe import _, qb
-from frappe.query_builder import CustomFunction
-from frappe.query_builder.functions import Max
-from frappe.utils import date_diff, flt, getdate
-import re
+from frappe import _
+from typing import Tuple
 
-
-def execute(filters=None):
+def execute(filters=None) -> Tuple:
     columns = get_columns(filters)
     conditions = get_conditions(filters)
-    data = get_data(filters,conditions)
+    data = get_data(filters, conditions)
+    data_dict = frappe._dict({})
+    crop_total_dict = frappe._dict({})
+
+    for item in data:
+        if item.debit:
+            if item.voucher_no in data_dict:
+                data_dict[item.voucher_no].append(
+                    {
+                        "posting_date": item.posting_date,
+                        "voucher_no": item.voucher_no,
+                        "voucher_type": item.voucher_type,
+                        "project_description": item.project_description,
+                        "amount": item.debit
+                    }
+                )
+            else:
+                data_dict[item.voucher_no] = [{
+                    "posting_date": item.posting_date,
+                    "voucher_no": item.voucher_no,
+                    "voucher_type": item.voucher_type,
+                    "project_description": item.project_description,
+                    "amount": item.debit
+                }]
+
+            if item.voucher_no in crop_total_dict:
+                crop_total_dict[item.voucher_no] += item.debit
+            else:
+                crop_total_dict[item.voucher_no] = item.debit
+
+    grand_total_dict = frappe._dict({})
+    for voucher_no, total_amount in crop_total_dict.items():
+        grand_total_dict[voucher_no] = total_amount
+
+    for voucher_no, items in data_dict.items():
+        items.append({
+            "posting_date": "",
+            "voucher_no": "",
+            "voucher_type": "",
+            "project_description": "Grand Total",
+            "amount": grand_total_dict[voucher_no]
+
+        })
+
+    data = []
+    for voucher_no, items in data_dict.items():
+        data.extend(items)
+
     return columns, data, None
+
 
 def get_conditions(filters):
     conditions = ""
@@ -25,27 +67,18 @@ def get_conditions(filters):
     return conditions
 
 def get_data(filters,conditions):
-    data = frappe.db.sql(f"""SELECT name as gl_entry,
-            posting_date,
-            voucher_type,
-            voucher_no, 
-            debit,credit,
-            account_currency,
-            remarks, against,,jla.project_description,jla.project
-            is_opening,creation 
+
+    data = frappe.db.sql(f"""SELECT gl.name as gl_entry,
+            gl.posting_date,
+            gl.voucher_type,
+            gl.voucher_no, 
+            gl.debit,gl.credit
+            
             FROM `tabGL Entry` gl 
-            JOIN `tabJournal Entry Account` jla 
-            ON gl.voucher_no = jla.parent
-            WHERE voucher_type not in ('Sales Invoice','Payment Entry','Stock Reconciliation','Stock Entry') 
-            AND  1=1 {conditions}
-            ORDER BY posting_date
-             """,as_dict=1,debug=1)
-    for row in data:
-        # print('hi')
-        if row.debit:
-            row.update({'amount':flt(row.get('debit'))})
-        if row.credit:
-            row.update({'amount':flt(row.get('credit'))})
+            
+            WHERE  voucher_type not in ('Sales Invoice','Payment Entry','Stock Reconciliation','Stock Entry') 
+            AND  1=1 {conditions}       
+
 
     return data
 
@@ -66,158 +99,25 @@ def get_columns(filters):
             "width": 110,
         },
         {
-            "label": _("Amount (Debit/Credit)"),
-            "fieldname": "amount",
-            "fieldtype": "Float",
-            "width": 180,
-        },
-        {
                 "label": _("Voucher No"),
                 "fieldname": "voucher_no",
                 "fieldtype": "Dynamic Link",
                 "options": "voucher_type",
                 "width": 170,
-            },
+        },
         {
             "label": _("Voucher Type"),
             "fieldname": "voucher_type",
             "fieldtype": "data",
             "width": 130,
         },
-
-        
+        {
+            "label": _("Amount (Debit/Credit)"),
+            "fieldname": "amount",
+            "fieldtype": "Float",
+            "width": 180,
+        },
     ]
     return columns
 
 
-
-# import copy
-# from collections import OrderedDict
-
-# import frappe
-# from frappe import _, qb
-# from frappe.query_builder import CustomFunction
-# from frappe.query_builder.functions import Max
-# from frappe.utils import date_diff, flt, getdate
-# import re
-
-
-# def execute(filters=None):
-#     columns = get_columns(filters)
-#     conditions = get_conditions(filters)
-#     data = get_data(filters,conditions)
-#     return columns, data, None
-
-# def get_conditions(filters):
-#     conditions = ""
-#     if filters.get("from_date") and filters.get("to_date"):
-#         conditions += f" and gl.posting_date between '{filters.get('from_date')}' and '{filters.get('to_date')}'"
-#     if filters.get("project"):
-#     	conditions += f" and gl.project = '{filters.get('project')}'"
-    
-#     return conditions
-
-# def get_data(filters,conditions):
-#     data = frappe.db.sql(f"""SELECT name as gl_entry,
-#             posting_date,
-#             voucher_type,
-#             voucher_no, 
-#             debit,credit,
-#             account_currency,
-#             remarks, against,
-#             is_opening,creation 
-#             FROM `tabGL Entry` gl WHERE 1=1  AND 
-#             voucher_type not in ('Sales Invoice','Payment Entry','Stock Reconciliation','Stock Entry') GROUP BY voucher_no
-#             {conditions}                     
-#              """,as_dict=1,debug=1)
-
-#     voucher_no_list = [voucher.voucher_no for voucher in data]
-
-#     # # print(f"\n\n voucher_no_list-----{voucher_no_list}\n\n")
-#     # data1 = frappe.db.sql(""" SELECT ec.name as expense_claim FROM `tabExpense Claim` ec 
-#     #     where  ec.name in {0}
-#     #  and ec.status not in ('Cancelled', 'Return','Draft','Debit Note Issued')
-#     #  """.format(tuple(voucher_no_list)),as_dict=1,debug=1)
-    
-#     # print(f"\n\n data1-----{data1}\n\n")
-
-#     # data2 = frappe.db.sql(""" SELECT pi.name as purchase_invoice FROM `tabPurchase Invoice` pi where  pi.name in {0}
-#     #  and pi.status not in ('Cancelled', 'Return','Draft','Debit Note Issued')
-#     #  """.format(tuple(voucher_no_list)),as_dict=1,debug=1)
-    
-#     # print(f"\n\n data2-----{data2}\n\n")
-
-
-#     for row in data:
-#         if row.debit:
-#             row.update({'amount':flt(row.get('debit'))})
-#         if row.credit:
-#             row.update({'amount':flt(row.get('credit'))})
-#         # if row.debit:
-#         #     balance =0
-#         #     row.update({'balance':(flt(row.get('debit')-row.get('credit')))})
-#         #     balance += row.get('debit', 0) - row.get('credit', 0)
-#         #     row.update({'balance':balance})
-#     return data
-# def get_columns(filters):
-#     columns = [
-    	
-    	
-#         {
-#             "label": _("Posting Date"),
-#             "fieldname": "posting_date",
-#             "fieldtype": "date",
-#             "width": 120,
-#         },
-#         {
-#             "label": _("Project Remarks/Description"),
-#             "fieldname": "project_description",
-#             "fieldtype": "data",
-#             "width": 110,
-#         },
-        
-#   #       {
-# 		# 	# "label": _("Debit ({0})").format(currency),
-# 		# 	"label": _("Debit"),
-# 		# 	"fieldname": "debit",
-# 		# 	"fieldtype": "Float",
-# 		# 	"width": 100,
-# 		# },
-# 		# {
-# 		# 	# "label": _("Credit ({0})").format(currency),
-# 		# 	"label": _("Credit"),
-# 		# 	"fieldname": "credit",
-# 		# 	"fieldtype": "Float",
-# 		# 	"width": 100,
-# 		# },
-# 		{
-# 			# "label": _("Balance ({0})").format(currency),
-# 			"label": _("Amount (Debit/Credit)"),
-# 			"fieldname": "amount",
-# 			"fieldtype": "Float",
-# 			"width": 130,
-# 		},
-#         # {
-#         #     # "label": _("Balance ({0})").format(currency),
-#         #     "label": _("Balance"),
-#         #     "fieldname": "balance",
-#         #     "fieldtype": "Float",
-#         #     "width": 130,
-#         # },
-#         {
-#                 "label": _("Voucher No"),
-#                 "fieldname": "voucher_no",
-#                 "fieldtype": "Dynamic Link",
-#                 "options": "voucher_type",
-#                 "width": 180,
-#             },
-#         {
-#             "label": _("Voucher Type"),
-#             "fieldname": "voucher_type",
-#             "fieldtype": "data",
-#             "width": 130,
-#         },
-
-        
-#     ]
-#     return columns
