@@ -25,7 +25,7 @@ def get_conditions(filters):
     return conditions
 
 def get_data(filters,conditions):
-    data = frappe.db.sql(f"""SELECT 
+    data = frappe.db.sql(f"""SELECT DISTINCT
                 gl.voucher_no,gl.voucher_type,gl.posting_date,gl.debit,
                 gl.credit,jla.project_description            
             FROM 
