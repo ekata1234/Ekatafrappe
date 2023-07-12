@@ -35,59 +35,57 @@ def get_data(filters,conditions):
             ORDER BY gl.posting_date
              """,as_dict=1,debug=1)
     voucher_no_list = [item.voucher_no for item in data]
+    print(f"\n voucher_no_list--{voucher_no_list}\nlen(voucher_no_list)--{len(voucher_no_list)}\n")
 
-    data2 = frappe.db.sql(""" 
-    		SELECT
-    		 parent,project_description from `tabJournal Entry Account`
-    		WHERE parent in {0}
-    	""".format(tuple(voucher_no_list)),as_dict=1,debug=1)
-    filtered_list = [dictionary for dictionary in data2 if all(value is not None for value in dictionary.values())]
+    if len(voucher_no_list) == 0:
+    	frappe.throw(f"No Voucher found related {filters.get('project')} project !! ")
+    else:
+    	print(f"\n--len isn't 0--\n")
+    	jl_data = frappe.db.sql(""" 
+	    		SELECT
+	    		 parent,project_description from `tabJournal Entry Account`
+	    		WHERE parent in {0}
+	    	""".format(tuple(voucher_no_list)),as_dict=1,debug=1)
+    	filtered_jl_list = [dictionary for dictionary in jl_data if all(value is not None for value in dictionary.values())]
+    	
+    	pi_data=frappe.db.sql("""
+    			SELECT 
+    				name,project_description from `tabPurchase Invoice`
+				WHERE name in {0}
+			""".format(tuple(voucher_no_list)),as_dict=1,debug=1)
+    	filtered_pi_list = [dictionary for dictionary in pi_data if all(value is not None for value in dictionary.values())]
 
-    # print(f"\ndata2--{filtered_list}\n{type(filtered_list)}")
-    for row in data:
-    	for row2 in filtered_list:
-    		if row.get('voucher_no')==row2.get('parent'):
-    			print(f"\n row2--{row2.get('project_description')}\n")
-    			row.update({'remarks':row2.get('project_description')})
+    	ec_data = frappe.db.sql(""" 
+	    		SELECT
+	    		 name,project_description from `tabExpense Claim`
+	    		WHERE name in {0}
+	    	""".format(tuple(voucher_no_list)),as_dict=1,debug=1)
+    	filtered_ec_list = [dictionary for dictionary in ec_data if all(value is not None for value in dictionary.values())]
 
-    data3 = frappe.db.sql(""" 
-    		SELECT
-    		 name,project_description from `tabPurchase Invoice`
-    		WHERE name in {0}
-    	""".format(tuple(voucher_no_list)),as_dict=1,debug=1)
-    filtered_pi_list = [dictionary for dictionary in data3 if all(value is not None for value in dictionary.values())]
-    for row in data:
-    	for row3 in filtered_pi_list:
-    		if row.get('voucher_no')==row3.get('name'):
-    			print(f"\n row2--{row3.get('project_description')}\n")
-    			row.update({'remarks':row3.get('project_description')})
+    	pr_data = frappe.db.sql(""" 
+	    		SELECT
+	    		 parent,project_description from `tabPurchase Receipt Item`
+	    		WHERE parent in {0}
+	    	""".format(tuple(voucher_no_list)),as_dict=1,debug=1)
+    	filtered_pr_list = [dictionary for dictionary in pr_data if all(value is not None for value in dictionary.values())]
+    	
+    	for row in data:
+	    	for row1 in filtered_jl_list:
+	    		if row.get('voucher_no')==row1.get('parent'):
+	    			row.update({'remarks':row1.get('project_description')})
+	    	for row2 in filtered_pi_list:
+	    		if row.get('voucher_no')==row2.get('name'):
+	    			row.update({'remarks':row2.get('project_description')})
+	    	for row3 in filtered_ec_list:
+	    		if row.get('voucher_no')==row3.get('name'):
+	    			row.update({'remarks':row3.get('project_description')})
+	    	for row4 in filtered_pr_list:
+	    		if row.get('voucher_no')==row4.get('parent'):
+	    			row.update({'remarks':row4.get('project_description')})
+		
 
-    data4 = frappe.db.sql(""" 
-    		SELECT
-    		 name,project_description from `tabExpense Claim`
-    		WHERE name in {0}
-    	""".format(tuple(voucher_no_list)),as_dict=1,debug=1)
-    filtered_ec_list = [dictionary for dictionary in data4 if all(value is not None for value in dictionary.values())]
-    for row in data:
-    	for row4 in filtered_ec_list:
-    		if row.get('voucher_no')==row4.get('name'):
-    			print(f"\n row2--{row4.get('project_description')}\n")
-    			row.update({'remarks':row4.get('project_description')})
 
-    data5 = frappe.db.sql(""" 
-    		SELECT
-    		 parent,project_description from `tabPurchase Receipt Item`
-    		WHERE parent in {0}
-    	""".format(tuple(voucher_no_list)),as_dict=1,debug=1)
-    filtered_pr_list = [dictionary for dictionary in data5 if all(value is not None for value in dictionary.values())]
 
-    # print(f"\ndata2--{filtered_list}\n{type(filtered_list)}")
-    for row in data:
-    	for row5 in filtered_pr_list:
-    		if row.get('voucher_no')==row5.get('parent'):
-    			print(f"\n row2--{row5.get('project_description')}\n")
-    			row.update({'remarks':row5.get('project_description')})
-    print(f"\n data3in get_data--{filtered_pr_list}\n")
 
     return data
 
