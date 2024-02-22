@@ -77,7 +77,9 @@ def get_data(filters,conditions):
             FROM `tabGL Entry` gl 
             
             WHERE  voucher_type not in ('Sales Invoice','Payment Entry','Stock Reconciliation','Stock Entry') 
-            AND  1=1 {conditions}       
+            AND  1=1 {conditions}
+            ORDER BY posting_date
+             """,as_dict=1,debug=1)
 
 
     return data
