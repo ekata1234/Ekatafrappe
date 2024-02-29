@@ -42,7 +42,8 @@ doctype_js = {
 	"Job Offer" : "ekata/custom_scripts/job_offer/job_offer.js",
 	"Stock Entry":"ekata/custom_scripts/stock_entry/stock_entry.js",
 	"Shipment":"ekata/custom_scripts/shipment/shipment.js",
-	"Purchase Order":"ekata/custom_scripts/purchase_order/purchase_order.js"
+	"Purchase Order":"ekata/custom_scripts/purchase_order/purchase_order.js",
+	"Purchase Receipt":"ekata/public/js/purchase_receipt.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
