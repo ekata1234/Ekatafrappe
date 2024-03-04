@@ -166,6 +166,9 @@ doc_events = {
 	"Material Request" : {
 		"validate":"ekata.ekata.custom_scripts.material_request.material_request.validate"
 	},
+	"Stock Ledger Entry" : {
+		"validate":"ekata.ekata.custom_scripts.stock_ledger_entry.stock_ledger_entry_py.validate"
+	},
 }
 
 # Scheduled Tasks
