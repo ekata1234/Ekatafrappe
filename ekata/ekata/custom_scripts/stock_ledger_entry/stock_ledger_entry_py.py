@@ -10,12 +10,18 @@ def validate(doc,method=None):
             if PRDoc.lot_no:
                 print('\n\n PRDoc lot_no-----------', PRDoc.lot_no)
                 doc.receipt_no = PRDoc.lot_no
+            if PRDoc.season:
+                doc.season = PRDoc.season
+            if PRDoc.grower_code:
+                doc.grower_code = PRDoc.grower_code
 
             for i in PRDoc.items:
                 print('\n\n item -----------', i.item_code, i.outturn_no)
 
                 if i.item_code == doc.item_code and i.outturn_no:
-                    doc.outturn_no = i.outturn_no
+                    # doc.outturn_no = i.outturn_no
+                    doc.bags = i.bags
+                    doc.gunny = i.bags
     if doc.voucher_type == "Stock Entry":
         print('\n\nvoucher type ------------ ', doc.voucher_type)
         SEDoc = frappe.get_doc('Stock Entry', doc.voucher_no)

@@ -39,7 +39,16 @@ def execute(filters=None):
 		item_detail = item_details[sle.item_code]
 
 		sle.update(item_detail)
-
+		# sle.update('')
+		# sle.update('')
+		sle.update({
+			"receipt_no": sle.get("receipt_no"),
+			"outturn_no": sle.get("outturn_no"),
+			"season": sle.get("season"),
+			"grower_code": sle.get("grower_code"),
+			"bags": sle.get("bags"),
+			"gunny": sle.get("gunny"),
+		})
 		if filters.get("batch_no"):
 			actual_qty += flt(sle.actual_qty, precision)
 			stock_value += sle.stock_value_difference
@@ -221,6 +230,51 @@ def get_columns():
 			"options": "Company",
 			"width": 110,
 		},
+		{
+			"label": _("Outturn No"),
+			"fieldname": "outturn_no",
+			"fieldtype": "Link",
+			"options": "Outturn No",
+			"width": 100,
+		},
+		{
+			"label": _("Lot No"),
+			"fieldname": "receipt_no",
+			"fieldtype": "Link",
+			"options": "Receipt No",
+			"width": 100,
+		},
+		{
+			"label": _("Season"),
+			"fieldname": "season",
+			"fieldtype": "Link",
+			"options": "Season",
+			"width": 100,
+		},
+		{
+			"label": _("Grower Code"),
+			"fieldname": "grower_code",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("Bags"),
+			"fieldname": "bags",
+			"fieldtype": "Float",
+			"width": 100,
+		},
+		# {
+		# 	"label": _("KGs"),
+		# 	"fieldname": "kgs",
+		# 	"fieldtype": "Float",
+		# 	"width": 100,
+		# },
+		{
+			"label": _("Gunny"),
+			"fieldname": "gunny",
+			"fieldtype": "Float",
+			"width": 100,
+		},
 	]
 
 	return columns
@@ -250,7 +304,13 @@ def get_stock_ledger_entries(filters, items):
 			serial_no,
 			company,
 			project,
-			stock_value_difference
+			stock_value_difference,
+			receipt_no,
+			outturn_no,
+			season,
+			grower_code,
+			bags,
+			gunny
 		FROM
 			`tabStock Ledger Entry` sle
 		WHERE
@@ -338,6 +398,10 @@ def get_sle_conditions(filters):
 		conditions.append("batch_no=%(batch_no)s")
 	if filters.get("project"):
 		conditions.append("project=%(project)s")
+	if filters.get("receipt_no"):
+		conditions.append("receipt_no=%(receipt_no)s")
+	if filters.get("outturn_no"):
+		conditions.append("outturn_no=%(outturn_no)s")
 
 	return "and {}".format(" and ".join(conditions)) if conditions else ""
 

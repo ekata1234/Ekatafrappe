@@ -58,6 +58,18 @@ frappe.query_reports["Custom Stock Ledger"] = {
 			"options": "Batch"
 		},
 		{
+			"fieldname":"receipt_no",
+			"label": __("Lot No"),
+			"fieldtype": "Link",
+			"options": "Receipt No"
+		},
+		{
+			"fieldname":"outturn_no",
+			"label": __("Outturn No"),
+			"fieldtype": "Link",
+			"options": "Outturn No"
+		},
+		{
 			"fieldname":"brand",
 			"label": __("Brand"),
 			"fieldtype": "Link",

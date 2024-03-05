@@ -1,7 +1,12 @@
 frappe.ui.form.on('Stock Entry', {
 refresh: function(frm) {
 
-    
+    frm.add_custom_button(__("Custom Stock Ledger"), function() {
+            frappe.route_options = {
+                voucher_no: frm.doc.name,
+            };
+            frappe.set_route("query-report", "Custom Stock Ledger");
+    }, __(""));
     if(frm.doc.docstatus > 0) {
         setTimeout(() => {
             frm.remove_custom_button('Stock Ledger', 'View');
