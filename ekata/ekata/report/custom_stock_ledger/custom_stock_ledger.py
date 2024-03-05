@@ -48,6 +48,8 @@ def execute(filters=None):
 			"grower_code": sle.get("grower_code"),
 			"bags": sle.get("bags"),
 			"gunny": sle.get("gunny"),
+			"location": sle.get("location"),
+			"receipt_no_data": sle.get("receipt_no_data"),
 		})
 		if filters.get("batch_no"):
 			actual_qty += flt(sle.actual_qty, precision)
@@ -263,6 +265,18 @@ def get_columns():
 			"fieldtype": "Float",
 			"width": 100,
 		},
+		{
+			"label": _("Location"),
+			"fieldname": "location",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("Receipt No"),
+			"fieldname": "receipt_no_data",
+			"fieldtype": "Data",
+			"width": 100,
+		},
 		# {
 		# 	"label": _("KGs"),
 		# 	"fieldname": "kgs",
@@ -310,7 +324,9 @@ def get_stock_ledger_entries(filters, items):
 			season,
 			grower_code,
 			bags,
-			gunny
+			gunny,
+			location,
+			receipt_no_data
 		FROM
 			`tabStock Ledger Entry` sle
 		WHERE

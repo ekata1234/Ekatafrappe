@@ -213,7 +213,7 @@
    "in_preview": 0,
    "in_standard_filter": 0,
    "insert_after": "batch_no",
-   "label": "Receipt No",
+   "label": "Lot No",
    "length": 0,
    "mandatory_depends_on": null,
    "modified": "2024-03-04 12:33:16.500414",
