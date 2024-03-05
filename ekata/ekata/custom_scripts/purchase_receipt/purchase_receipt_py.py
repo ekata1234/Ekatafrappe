@@ -1,8 +1,8 @@
 import frappe
 
 @frappe.whitelist()
-def get_no_of_bags(kgs, bag_cat):
-    print('kgs--------bag_cat---------', kgs, bag_cat)
-    KG = float(kgs)
+def get_no_of_bags(qty, bag_cat):
+    print('\nkgs--------bag_cat---------\n', qty, bag_cat)
+    Qty = float(qty)
     B_Cat = float(bag_cat)
-    return KG/B_Cat
+    return Qty/B_Cat
