@@ -48,10 +48,8 @@ def execute(filters=None):
 			"grower_code": sle.get("grower_code"),
 			"bags": sle.get("bags"),
 			"gunny": sle.get("gunny"),
-<<<<<<< HEAD
 			"location": sle.get("location"),
 			"receipt_no_data": sle.get("receipt_no_data"),
-=======
 			"category": sle.get("category"),
 			"sample_mc": sle.get("sample_mc"),
 			"sample_ot": sle.get("sample_ot"),
@@ -63,7 +61,6 @@ def execute(filters=None):
 			"bbb": sle.get("bbb"),
 			"coffee_processing": sle.get("coffee_processing"),
 			"note": sle.get("note"),
->>>>>>> 7d535df (stock ledger report changes)
 		})
 		if filters.get("batch_no"):
 			actual_qty += flt(sle.actual_qty, precision)
@@ -279,7 +276,6 @@ def get_columns():
 			"fieldtype": "Float",
 			"width": 100,
 		},
-<<<<<<< HEAD
 		{
 			"label": _("Location"),
 			"fieldname": "location",
@@ -298,8 +294,6 @@ def get_columns():
 		# 	"fieldtype": "Float",
 		# 	"width": 100,
 		# },
-=======
->>>>>>> 7d535df (stock ledger report changes)
 		{
 			"label": _("Gunny"),
 			"fieldname": "gunny",
@@ -414,10 +408,8 @@ def get_stock_ledger_entries(filters, items):
 			grower_code,
 			bags,
 			gunny,
-<<<<<<< HEAD
 			location,
 			receipt_no_data
-=======
 			category,
 			sample_mc,
 			sample_ot,
@@ -429,7 +421,6 @@ def get_stock_ledger_entries(filters, items):
 			bbb,
 			coffee_processing,
 			note
->>>>>>> 7d535df (stock ledger report changes)
 		FROM
 			`tabStock Ledger Entry` sle
 		WHERE

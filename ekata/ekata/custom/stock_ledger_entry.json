@@ -93,11 +93,8 @@
    "in_preview": 0,
    "in_standard_filter": 0,
    "insert_after": "section_break_slbsm",
-<<<<<<< HEAD
    "label": "Lot No",
-=======
    "label": "Receipt No",
->>>>>>> 7d535df (stock ledger report changes)
    "length": 0,
    "mandatory_depends_on": null,
    "modified": "2024-03-04 14:42:55.793190",

@@ -24,9 +24,8 @@ def validate(doc,method=None):
                     # doc.outturn_no = i.outturn_no
                     doc.bags = i.bags
                     doc.gunny = i.bags
-<<<<<<< HEAD
+
                     doc.location = i.location
-=======
                     doc.category = i.bag_category
                     doc.sample_mc = i.sample_mc
                     doc.sample_ot = i.sample_ot
@@ -39,7 +38,6 @@ def validate(doc,method=None):
                     doc.coffee_processing = i.coffee_processing
                     doc.note = i.note
 
->>>>>>> 7d535df (stock ledger report changes)
     if doc.voucher_type == "Stock Entry":
         print('\n\nvoucher type ------------ ', doc.voucher_type)
         SEDoc = frappe.get_doc('Stock Entry', doc.voucher_no)
