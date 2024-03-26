@@ -48,8 +48,22 @@ def execute(filters=None):
 			"grower_code": sle.get("grower_code"),
 			"bags": sle.get("bags"),
 			"gunny": sle.get("gunny"),
+<<<<<<< HEAD
 			"location": sle.get("location"),
 			"receipt_no_data": sle.get("receipt_no_data"),
+=======
+			"category": sle.get("category"),
+			"sample_mc": sle.get("sample_mc"),
+			"sample_ot": sle.get("sample_ot"),
+			"sample_grade": sle.get("sample_grade"),
+			"pb": sle.get("pb"),
+			"a": sle.get("a"),
+			"b": sle.get("b"),
+			"c": sle.get("c"),
+			"bbb": sle.get("bbb"),
+			"coffee_processing": sle.get("coffee_processing"),
+			"note": sle.get("note"),
+>>>>>>> 7d535df (stock ledger report changes)
 		})
 		if filters.get("batch_no"):
 			actual_qty += flt(sle.actual_qty, precision)
@@ -265,6 +279,7 @@ def get_columns():
 			"fieldtype": "Float",
 			"width": 100,
 		},
+<<<<<<< HEAD
 		{
 			"label": _("Location"),
 			"fieldname": "location",
@@ -283,10 +298,84 @@ def get_columns():
 		# 	"fieldtype": "Float",
 		# 	"width": 100,
 		# },
+=======
+>>>>>>> 7d535df (stock ledger report changes)
 		{
 			"label": _("Gunny"),
 			"fieldname": "gunny",
 			"fieldtype": "Float",
+			"width": 100,
+		},
+		{
+			"label": _("Category"),
+			"fieldname": "category",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("Bags"),
+			"fieldname": "bags",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("Sample MC"),
+			"fieldname": "sample_mc",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("Sample OT"),
+			"fieldname": "sample_ot",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("Sample Grade"),
+			"fieldname": "sample_grade",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("PB (%)"),
+			"fieldname": "pb",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("A (%)"),
+			"fieldname": "a",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("B (%)"),
+			"fieldname": "b",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("C (%)"),
+			"fieldname": "c",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("BBB (%)"),
+			"fieldname": "bbb",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("Coffee Processing"),
+			"fieldname": "coffee_processing",
+			"fieldtype": "Data",
+			"width": 100,
+		},
+		{
+			"label": _("Note"),
+			"fieldname": "note",
+			"fieldtype": "Data",
 			"width": 100,
 		},
 	]
@@ -325,8 +414,22 @@ def get_stock_ledger_entries(filters, items):
 			grower_code,
 			bags,
 			gunny,
+<<<<<<< HEAD
 			location,
 			receipt_no_data
+=======
+			category,
+			sample_mc,
+			sample_ot,
+			sample_grade,
+			pb,
+			a,
+			b,
+			c,
+			bbb,
+			coffee_processing,
+			note
+>>>>>>> 7d535df (stock ledger report changes)
 		FROM
 			`tabStock Ledger Entry` sle
 		WHERE
