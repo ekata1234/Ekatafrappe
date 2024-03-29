@@ -215,7 +215,8 @@ scheduler_events = {
 # }
 #
 override_whitelisted_methods = {
-	"erpnext.stock.doctype.material_request.material_request.make_request_for_quotation":"ekata.ekata.custom_scripts.material_request.material_request.make_request_for_quotation"
+	"erpnext.stock.doctype.material_request.material_request.make_request_for_quotation":"ekata.ekata.custom_scripts.material_request.material_request.make_request_for_quotation",
+	"erpnext.stock.doctype.purchase_receipt.purchase_receipt.make_stock_entry":"ekata.ekata.custom_scripts.purchase_receipt.purchase_receipt_py.create_stock_entry"
 }
 
 # each overriding function accepts a `data` argument;
