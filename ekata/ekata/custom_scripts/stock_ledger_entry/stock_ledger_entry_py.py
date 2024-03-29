@@ -51,3 +51,8 @@ def validate(doc,method=None):
                     print(i.outturn_no, i.receipt_no)
                     doc.outturn_no = i.outturn_no
                     doc.receipt_no = i.receipt_no
+                    doc.coffee_processing = i.coffee_processing_details
+                    doc.season = i.season
+
+
+
