@@ -6,6 +6,17 @@ frappe.ui.form.on('Stock Entry', {
                 };
                 frappe.set_route("query-report", "Custom Stock Ledger");
         }, __(""));
+        frm.add_custom_button(__("Create Repack"), function() {
+            frappe.model.open_mapped_doc({
+                method: "ekata.ekata.custom_scripts.stock_entry.stock_entry.create_repack_entry",
+                frm: frm,
+                args: {
+                    doc: frm.doc
+                },
+                run_link_triggers: true
+            });
+        }, __(""));
+
         if(frm.doc.docstatus > 0) {
             setTimeout(() => {
                 frm.remove_custom_button('Stock Ledger', 'View');
@@ -25,6 +36,21 @@ frappe.ui.form.on('Stock Entry', {
 
    },
    validate: function(frm){
+        if (frm.doc.items && frm.doc.items.length) {
+            var fg_per = 0; // Declare fg_per before using it
+            $.each(frm.doc.items || [], function(i, item) {
+                if (!item.is_finished_item && !item.is_scrap_item && !item.is_process_loss) {
+                    console.log(item.qty);
+                } else {
+                    console.log(fg_per);
+                    fg_per += item.fg_percentage;
+                }
+            });
+            if (fg_per < 100) {
+                frappe.throw('FG Percentage should be 100%');
+            }
+        }
+
         if (frm.doc.outturn_no) {
             frm.events.updateItems(frm, 'outturn_no', frm.doc.outturn_no);
         }
@@ -52,4 +78,33 @@ frappe.ui.form.on('Stock Entry', {
             frm.events.updateItems(frm, 'receipt_no', frm.doc.lot_no);
         }
    }
+});
+frappe.ui.form.on('Stock Entry Detail',{
+    fg_percentage: function(frm,cdt,cdn){
+        var row = locals[cdt][cdn];
+        var rm_qty = 0
+        var fg_per = 0
+        var fg_qty = 0
+        if (frm.doc.items && frm.doc.items.length) {
+            $.each(frm.doc.items || [], function(i, item) {
+                if (!item.is_finished_item && !item.is_scrap_item && !item.is_process_loss)
+                {
+                    console.log(item.qty)
+                    rm_qty += item.qty;
+                }else{
+                    console.log(item.fg_percentage)
+                    fg_per += item.fg_percentage;
+                }
+            });
+        }
+        console.log('row qty',rm_qty,'fg per', fg_per)
+        if (fg_per <= 100 ){
+            var fg_qty = (rm_qty * row.fg_percentage) / 100
+            frappe.model.set_value(cdt, cdn, 'qty', fg_qty)
+        }else{
+            frappe.model.set_value(cdt, cdn, 'fg_percentage', 0)
+            frappe.model.set_value(cdt, cdn, 'qty', 0)
+            frappe.throw('FG Percentage cannot be greater than 100%');
+        }
+    }
 });

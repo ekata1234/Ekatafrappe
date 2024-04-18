@@ -46,6 +46,7 @@ doctype_js = {
 	"Purchase Receipt":"ekata/public/js/purchase_receipt.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+doctype_list_js = {"Purchase Receipt": "ekata/public/js/purchase_receipt_list.js"}
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
@@ -161,7 +162,8 @@ doc_events = {
 		"validate":"ekata.ekata.custom_scripts.supplier_quotation.supplier_quotation.validate"
 	},
 	"Stock Entry" : {
-		"on_submit":"ekata.ekata.custom_scripts.stock_entry.stock_entry.on_submit"
+		"on_submit":"ekata.ekata.custom_scripts.stock_entry.stock_entry.on_submit",
+		"validate":"ekata.ekata.custom_scripts.stock_entry.stock_entry.validate"
 	},
 	"Material Request" : {
 		"validate":"ekata.ekata.custom_scripts.material_request.material_request.validate"
