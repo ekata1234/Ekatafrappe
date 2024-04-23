@@ -37,7 +37,7 @@ frappe.ui.form.on('Stock Entry', {
    },
    validate: function(frm){
         if (frm.doc.items && frm.doc.items.length) {
-            var fg_per = 0; // Declare fg_per before using it
+            var fg_per = 0;
             $.each(frm.doc.items || [], function(i, item) {
                 if (!item.is_finished_item && !item.is_scrap_item && !item.is_process_loss) {
                     console.log(item.qty);
@@ -89,8 +89,8 @@ frappe.ui.form.on('Stock Entry Detail',{
             $.each(frm.doc.items || [], function(i, item) {
                 if (!item.is_finished_item && !item.is_scrap_item && !item.is_process_loss)
                 {
-                    console.log(item.qty)
-                    rm_qty += item.qty;
+                    console.log(item.outturn_qty)
+                    rm_qty += item.outturn_qty;
                 }else{
                     console.log(item.fg_percentage)
                     fg_per += item.fg_percentage;
@@ -100,6 +100,7 @@ frappe.ui.form.on('Stock Entry Detail',{
         console.log('row qty',rm_qty,'fg per', fg_per)
         if (fg_per <= 100 ){
             var fg_qty = (rm_qty * row.fg_percentage) / 100
+            fg_qty = Math.round(fg_qty);
             frappe.model.set_value(cdt, cdn, 'qty', fg_qty)
         }else{
             frappe.model.set_value(cdt, cdn, 'fg_percentage', 0)
