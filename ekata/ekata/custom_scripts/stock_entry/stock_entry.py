@@ -6,7 +6,7 @@ def on_submit(doc,method=None):
         frappe.db.set_value('Stock Ledger Entry',{'voucher_no':doc.name,'item_code':item.item_code},'supplier',item.supplier)
 
 def validate(doc,method=None):
-	print('\n\n--------------validate--------------\n\n')
+	print('\n\n--------------set basic rate--------------\n\n')
 	rm_amount = 0
 	fg_qty = 0
 	rate = 0
@@ -37,10 +37,26 @@ def validate(doc,method=None):
 
 @frappe.whitelist()
 def create_repack_entry(source_name, target_doc=None):
+	print('>>> create repack entry >>>')
 	doc = frappe.flags.args.doc
+	SEDoc = frappe.get_doc('Stock Entry', doc['name'])
 	stock_entry = frappe.new_doc("Stock Entry")
 	stock_entry.stock_entry_type = "Repack"
 	stock_entry.set_posting_time = 1
-	for item in doc['items']:
+	for item in SEDoc.items:
 		print('\n\n >>>> ', item)
+		if item.is_finished_item == 1:
+			stock_entry.append('items', {
+				's_warehouse': item.t_warehouse,
+				'item_code': item.item_code,
+				'qty': item.qty,
+				'uom': item.uom,
+				'basic_rate': item.basic_rate,
+				'batch_no': item.batch_no,
+				'receipt_no': item.receipt_no,
+				'outturn_no': item.outturn_no,
+				'season': item.season,
+				'coffee_processing_details': item.coffee_processing_details
+			})
+	return stock_entry
 

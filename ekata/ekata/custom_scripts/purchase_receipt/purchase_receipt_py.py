@@ -48,10 +48,9 @@ def create_stock_entry(source_name, target_doc=None):
 		return doclist
 
 @frappe.whitelist()
-def create_stock_entry_from_purchase_receipts(purchase_receipt_lst, item_code, target_warehouse):
-	print('\n\n----------PR List---------', purchase_receipt_lst)
-	data = json.loads(purchase_receipt_lst)
-
+def create_stock_entry_from_purchase_receipts(source_name, target_doc=None):
+	print('\n\n----------PR List---------')
+	data = frappe.flags.args.purchase_receipt_list
 	items = []
 	for pr_name in data:
 		print('\n\n --------------', pr_name)
@@ -75,11 +74,9 @@ def create_stock_entry_from_purchase_receipts(purchase_receipt_lst, item_code, t
 	stock_entry = frappe.new_doc("Stock Entry")
 	stock_entry.stock_entry_type = "Bulking"
 	stock_entry.set_posting_time = 1
-	if items:
-		items.append({"item_code": item_code, "t_warehouse": target_warehouse, "qty": 1})
-		for item in items:
-			stock_entry.append("items", item)
-		stock_entry.save()
-		return stock_entry.name
+
+	for item in items:
+		stock_entry.append("items", item)
+	return stock_entry
 
 
