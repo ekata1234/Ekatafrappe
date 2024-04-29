@@ -46,7 +46,7 @@ frappe.listview_settings['Purchase Receipt'] = {
 
 function CreateBulking(listview){
     let checked_items = listview.get_checked_items();
-    console.log('>',listview)
+    console.log('> > >',listview)
     console.log('checked items',checked_items)
      frappe.model.open_mapped_doc({
         method: "ekata.ekata.custom_scripts.purchase_receipt.purchase_receipt_py.create_stock_entry_from_purchase_receipts",
