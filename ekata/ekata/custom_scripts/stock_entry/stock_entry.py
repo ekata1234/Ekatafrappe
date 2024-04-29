@@ -51,6 +51,7 @@ def create_repack_entry(source_name, target_doc=None):
 				'item_code': item.item_code,
 				'qty': item.qty,
 				'uom': item.uom,
+				'stock_uom': item.stock_uom,
 				'basic_rate': item.basic_rate,
 				'batch_no': item.batch_no,
 				'receipt_no': item.receipt_no,

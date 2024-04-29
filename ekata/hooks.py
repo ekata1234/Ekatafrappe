@@ -46,7 +46,10 @@ doctype_js = {
 	"Purchase Receipt":"ekata/public/js/purchase_receipt.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
-doctype_list_js = {"Purchase Receipt": "ekata/public/js/purchase_receipt_list.js"}
+doctype_list_js = {
+					"Purchase Receipt": "ekata/public/js/purchase_receipt_list.js",
+					"Attendance": "ekata/public/js/attendance_list.js",
+				   }
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 

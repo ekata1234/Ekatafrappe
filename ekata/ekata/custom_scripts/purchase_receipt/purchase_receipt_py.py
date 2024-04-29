@@ -64,6 +64,8 @@ def create_stock_entry_from_purchase_receipts(source_name, target_doc=None):
 				"parent": purchase_receipt.name,
 				"batch_no": item.batch_no,
 				"uom": item.uom,
+				"stock_uom": item.uom,
+				"basic_rate":item.rate,
 				"s_warehouse": item.warehouse,
 				"coffee_processing_details": item.coffee_processing,
 				"receipt_no": purchase_receipt.lot_no,
