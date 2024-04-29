@@ -35,6 +35,7 @@ frappe.ui.form.on('Stock Entry', {
         }
 
    },
+
    validate: function(frm){
         if (frm.doc.items && frm.doc.items.length) {
             var fg_per = 0;
@@ -58,6 +59,7 @@ frappe.ui.form.on('Stock Entry', {
             frm.events.updateItems(frm, 'receipt_no', frm.doc.lot_no);
         }
    },
+
    updateItems: function(frm, field, value) {
         if (frm.doc.items && frm.doc.items.length) {
             let doctype = frm.doc.items[0].doctype;
