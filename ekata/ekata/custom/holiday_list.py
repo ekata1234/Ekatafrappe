@@ -29,7 +29,7 @@ def send_notifications_mail():
                     WHERE h.parent = hl.name and hl.send_daily_reminder = 1 """,as_dict=1)
 
     emp_list = frappe.db.get_list('Employee',filters=[["status","=","Active"],["user_id","is","set"]],fields =['prefered_email','employee_name','user_id'])
-    print("\n\nemp_list--",emp_list)
+    # print("\n\nemp_list--",emp_list)
     for emp in emp_list:
         emp_role = frappe.get_roles(emp['user_id'])
         if 'Bank Holiday User' in emp_role:
