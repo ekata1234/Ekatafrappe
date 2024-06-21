@@ -7,32 +7,33 @@ def on_submit(doc,method=None):
 
 def validate(doc,method=None):
 	print('\n\n--------------set basic rate--------------\n\n')
-	rm_amount = 0
-	fg_qty = 0
-	rate = 0
-	last_fg_item = []
-	for i in doc.items:
-		i.db_set('set_basic_rate_manually', 1)
-		if not i.is_finished_item and not i.is_scrap_item and not i.is_process_loss:
-			rm_amount += i.amount
-		if i.is_finished_item:
-			print(i.qty)
-			fg_qty += i.qty
-		if i.is_process_loss:
-			i.db_set('basic_rate', 0)
-			i.db_set('amount', 0)
-	rate = rm_amount/fg_qty
-	print('>>> gf qty', fg_qty)
-	if rate > 0:
+	if doc.stock_entry_type == 'Repack' or doc.stock_entry_type == 'Bulking':
+		rm_amount = 0
+		fg_qty = 0
+		rate = 0
+		last_fg_item = []
 		for i in doc.items:
-			if i.is_finished_item == 1:
-				last_fg_item.append(i)
-				amount = rate * i.qty
-				print('>>> rate', rate, amount)
-				i.db_set('basic_rate', rate)
-				i.db_set('amount', amount)
+			i.db_set('set_basic_rate_manually', 1)
+			if not i.is_finished_item and not i.is_scrap_item and not i.is_process_loss:
+				rm_amount += i.amount
+			if i.is_finished_item:
+				print(i.qty)
+				fg_qty += i.qty
+			if i.is_process_loss:
+				i.db_set('basic_rate', 0)
+				i.db_set('amount', 0)
+		rate = rm_amount/fg_qty
+		print('>>> gf qty', fg_qty)
+		if rate > 0:
+			for i in doc.items:
+				if i.is_finished_item == 1:
+					last_fg_item.append(i)
+					amount = rate * i.qty
+					print('>>> rate', rate, amount)
+					i.db_set('basic_rate', rate)
+					i.db_set('amount', amount)
 
-	doc.set_total_incoming_outgoing_value()
+		doc.set_total_incoming_outgoing_value()
 
 
 @frappe.whitelist()

@@ -281,7 +281,7 @@
    "name": "Stock Entry-item_type",
    "no_copy": 0,
    "non_negative": 0,
-   "options": "Raw Coffee\nFinished Goods\nOther Materials",
+   "options": "Repack\nBulking\nAfter Bulking Repack",
    "owner": "Administrator",
    "parent": null,
    "parentfield": null,
