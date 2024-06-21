@@ -37,18 +37,20 @@ frappe.ui.form.on('Stock Entry', {
    },
 
    validate: function(frm){
-        if (frm.doc.items && frm.doc.items.length) {
-            var fg_per = 0;
-            $.each(frm.doc.items || [], function(i, item) {
-                if (!item.is_finished_item && !item.is_scrap_item && !item.is_process_loss) {
-                    console.log(item.qty);
-                } else {
-                    console.log(fg_per);
-                    fg_per += item.fg_percentage;
+        if(frm.doc.stock_entry_type == 'Repack' || frm.doc.stock_entry_type == 'Bulking'){
+            if (frm.doc.items && frm.doc.items.length) {
+                var fg_per = 0;
+                $.each(frm.doc.items || [], function(i, item) {
+                    if (!item.is_finished_item && !item.is_scrap_item && !item.is_process_loss) {
+                        console.log(item.qty);
+                    } else {
+                        console.log(fg_per);
+                        fg_per += item.fg_percentage;
+                    }
+                });
+                if (fg_per < 100) {
+                    frappe.throw('FG Percentage should be 100%');
                 }
-            });
-            if (fg_per < 100) {
-                frappe.throw('FG Percentage should be 100%');
             }
         }
 
