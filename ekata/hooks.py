@@ -42,9 +42,14 @@ doctype_js = {
 	"Job Offer" : "ekata/custom_scripts/job_offer/job_offer.js",
 	"Stock Entry":"ekata/custom_scripts/stock_entry/stock_entry.js",
 	"Shipment":"ekata/custom_scripts/shipment/shipment.js",
-	"Purchase Order":"ekata/custom_scripts/purchase_order/purchase_order.js"
+	"Purchase Order":"ekata/custom_scripts/purchase_order/purchase_order.js",
+	"Purchase Receipt":"ekata/public/js/purchase_receipt.js"
 }
 # doctype_list_js = {"doctype" : "public/js/doctype_list.js"}
+doctype_list_js = {
+					"Purchase Receipt": "ekata/public/js/purchase_receipt_list.js",
+					"Attendance": "ekata/public/js/attendance_list.js",
+				   }
 # doctype_tree_js = {"doctype" : "public/js/doctype_tree.js"}
 # doctype_calendar_js = {"doctype" : "public/js/doctype_calendar.js"}
 
@@ -160,10 +165,14 @@ doc_events = {
 		"validate":"ekata.ekata.custom_scripts.supplier_quotation.supplier_quotation.validate"
 	},
 	"Stock Entry" : {
-		"on_submit":"ekata.ekata.custom_scripts.stock_entry.stock_entry.on_submit"
+		"on_submit":"ekata.ekata.custom_scripts.stock_entry.stock_entry.on_submit",
+		"validate":"ekata.ekata.custom_scripts.stock_entry.stock_entry.validate"
 	},
 	"Material Request" : {
 		"validate":"ekata.ekata.custom_scripts.material_request.material_request.validate"
+	},
+	"Stock Ledger Entry" : {
+		"validate":"ekata.ekata.custom_scripts.stock_ledger_entry.stock_ledger_entry_py.validate"
 	},
 }
 
@@ -211,7 +220,8 @@ scheduler_events = {
 # }
 #
 override_whitelisted_methods = {
-	"erpnext.stock.doctype.material_request.material_request.make_request_for_quotation":"ekata.ekata.custom_scripts.material_request.material_request.make_request_for_quotation"
+	"erpnext.stock.doctype.material_request.material_request.make_request_for_quotation":"ekata.ekata.custom_scripts.material_request.material_request.make_request_for_quotation",
+	"erpnext.stock.doctype.purchase_receipt.purchase_receipt.make_stock_entry":"ekata.ekata.custom_scripts.purchase_receipt.purchase_receipt_py.create_stock_entry"
 }
 
 # each overriding function accepts a `data` argument;
