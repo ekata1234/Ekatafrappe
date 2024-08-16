@@ -281,7 +281,7 @@
    "name": "Stock Entry-item_type",
    "no_copy": 0,
    "non_negative": 0,
-   "options": "Repack\nBulking\nAfter Bulking Repack",
+   "options": "Repack\nBulking\nAfter Bulking Repack\nMaterial Receipt\nMaterial Transfer\nMaterial Issue",
    "owner": "Administrator",
    "parent": null,
    "parentfield": null,
