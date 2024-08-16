@@ -1,7 +1,7 @@
 frappe.ui.form.on("Purchase Receipt", {
     refresh: function(frm) {
         frm.add_custom_button(__('View Custom Stock Ledger'), function(){
-            var url = "/app/ekata/ekata/ekata/query-report/Custom Stock Ledger?voucher_no=" + encodeURIComponent(frm.doc.name)
+            var url = "/app/ekata/ekata/query-report/Custom Stock Ledger?voucher_no=" + encodeURIComponent(frm.doc.name)
                 +"&receipt_no="+ encodeURIComponent(frm.doc.lot_no);
               frappe.set_route(url);
         },)
