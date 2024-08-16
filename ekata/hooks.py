@@ -122,7 +122,7 @@ fixtures = [
 ]
 
 
-# fixtures = [{"dt":'Custom Field',"filters":[["name", "in", ("Purchase Order-section_break_62","Purchase Order-subject", "Purchase Order-column_break_64","Purchase Order-other_content","Purchase Order-authorization","Purchase Order-attachment","Purchase Order-preview_html")]]}]
+fixtures = [{"dt":'Custom Field',"filters":[["name", "in", ("Purchase Order-section_break_62","Purchase Order-subject", "Purchase Order-column_break_64","Purchase Order-other_content","Purchase Order-authorization","Purchase Order-attachment","Purchase Order-preview_html")]]}]
 # DocType Class
 # ---------------
 # Override standard doctype classes
@@ -180,11 +180,11 @@ doc_events = {
 # ---------------
 
 scheduler_events = {
-# "cron": {
-# 	"0 9 * * *": [
-# 			"ekata.ekata.custom.holiday_list.send_notifications_mail",
-# 		],
-# 		},
+"cron": {
+	"0 9 * * *": [
+			"ekata.ekata.custom.holiday_list.send_notifications_mail",
+		],
+		},
 # 	"all": [
 # #		"ekata.tasks.all"
 # 		# "ekata.ekata.custom.holiday_list.send_notifications_mail"
