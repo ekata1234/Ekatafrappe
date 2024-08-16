@@ -14,12 +14,12 @@ def validate(doc,method=None):
 		last_fg_item = []
 		for i in doc.items:
 			i.db_set('set_basic_rate_manually', 1)
-			if not i.is_finished_item and not i.is_scrap_item and not i.is_process_loss:
+			if not i.is_finished_item and not i.is_scrap_item and not i.custom_is_process_loss:
 				rm_amount += i.amount
 			if i.is_finished_item:
 				print(i.qty)
 				fg_qty += i.qty
-			if i.is_process_loss:
+			if i.custom_is_process_loss:
 				i.db_set('basic_rate', 0)
 				i.db_set('amount', 0)
 		rate = rm_amount/fg_qty
