@@ -13,6 +13,9 @@ def validate(doc,method=None):
 		rate = 0
 		last_fg_item = []
 		for i in doc.items:
+			if i.custom_is_process_loss:
+				i.db_set('is_finished_item', 0)
+
 			i.db_set('set_basic_rate_manually', 1)
 			if not i.is_finished_item and not i.is_scrap_item and not i.custom_is_process_loss:
 				rm_amount += i.amount
@@ -32,6 +35,7 @@ def validate(doc,method=None):
 					print('>>> rate', rate, amount)
 					i.db_set('basic_rate', rate)
 					i.db_set('amount', amount)
+					i.db_set('basic_amount', amount)
 
 		doc.set_total_incoming_outgoing_value()
 
