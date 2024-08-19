@@ -41,7 +41,7 @@ frappe.ui.form.on('Stock Entry', {
             if (frm.doc.items && frm.doc.items.length) {
                 var fg_per = 0;
                 $.each(frm.doc.items || [], function(i, item) {
-                    if (!item.is_finished_item && !item.is_scrap_item && !item.is_process_loss) {
+                    if (!item.is_finished_item && !item.is_scrap_item && !item.custom_is_process_loss) {
                         console.log(item.qty);
                     } else {
                         console.log(fg_per);
@@ -91,7 +91,7 @@ frappe.ui.form.on('Stock Entry Detail',{
         var fg_qty = 0
         if (frm.doc.items && frm.doc.items.length) {
             $.each(frm.doc.items || [], function(i, item) {
-                if (!item.is_finished_item && !item.is_scrap_item && !item.is_process_loss)
+                if (!item.is_finished_item && !item.is_scrap_item && !item.custom_is_process_loss)
                 {
                     console.log(item.outturn_qty)
                     rm_qty += item.outturn_qty;

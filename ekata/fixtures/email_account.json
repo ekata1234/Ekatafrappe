@@ -374,7 +374,7 @@
   "parent": null,
   "parentfield": null,
   "parenttype": null,
-  "password": "********",
+  "password": null,
   "send_notification_to": null,
   "send_unsubscribe_message": 0,
   "service": "",
