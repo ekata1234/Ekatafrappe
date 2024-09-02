@@ -180,6 +180,9 @@ doc_events = {
 # ---------------
 
 scheduler_events = {
+"hourly": [
+          "ekata.ekata.custom_scripts.email_queue.delete_email_queues"
+      ],
 "cron": {
 	"0 9 * * *": [
 			"ekata.ekata.custom.holiday_list.send_notifications_mail",
